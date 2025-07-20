@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-training-microservice
+  namespace: teegarden
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-training-microservice
+  template:
+    metadata:
+      labels:
+        app: ai-training-microservice
+    spec:
+      containers:
+        - name: ai-training-microservice
+          image: gguardiola/ai-training-microservice:latest
+          env:
+            - name: env
+              value: tst
+          ports:
+            - containerPort: 2080

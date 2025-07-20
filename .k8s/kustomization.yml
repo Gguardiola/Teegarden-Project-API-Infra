@@ -1,0 +1,15 @@
+namespace: teegarden
+resources:
+  - namespace.yml
+  - mongodb/deployment.yml
+  - mongodb/service.yml
+  - mongodb/pvc.yml
+  - minio/deployment.yml
+  - minio/service.yml
+  - minio/pvc.yml
+  - ai-training-microservice/deployment.yml
+  - ai-training-microservice/service.yml
+  - nginx/deployment.yml
+  - nginx/service.yml
+  - nginx/configmap.yml
+  - nginx/ingress.yml

@@ -1,4 +1,3 @@
-# services/combat_log_service.py
 from dto.combat_log_dto import CombatLogDTO
 from dto.combat_log_rl_dto import RLExperience, RLState
 import repository.combat_log_repository as CombatLogRepository

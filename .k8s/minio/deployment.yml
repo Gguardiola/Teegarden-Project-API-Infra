@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio-bucket
+  namespace: teegarden
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minio-bucket
+  template:
+    metadata:
+      labels:
+        app: minio-bucket
+    spec:
+      containers:
+        - name: minio-bucket
+          image: minio/minio:latest
+          args:
+            - server
+            - /data
+          env:
+            - name: MINIO_ROOT_USER
+              value: minioadmin
+            - name: MINIO_ROOT_PASSWORD
+              value: minioadmin
+          ports:
+            - containerPort: 9000
+          volumeMounts:
+            - name: minio-data
+              mountPath: /data
+      volumes:
+        - name: minio-data
+          persistentVolumeClaim:
+            claimName: minio-pvc
