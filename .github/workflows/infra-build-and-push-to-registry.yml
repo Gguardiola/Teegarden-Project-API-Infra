@@ -25,7 +25,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
-        context: ./ai-training-microservice
-        file: ./Dockerfile
+        context: .
+        file: ./ai-training-microservice/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/ai-training-microservice:latest
