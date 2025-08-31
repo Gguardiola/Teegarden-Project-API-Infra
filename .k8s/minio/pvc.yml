@@ -4,6 +4,7 @@ metadata:
   name: minio-pvc
   namespace: teegarden
 spec:
+  storageClassName: minio-storage
   accessModes:
     - ReadWriteOnce
   resources:

@@ -1,5 +1,5 @@
 name: Build and push to registry
-
+## TODO: environment variables, replace token on minio admin password, final hostname, presigned minio bucket donwload link...
 on:
   workflow_dispatch: {}
   push:

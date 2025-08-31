@@ -22,3 +22,9 @@ To deploy the API locally:
 ```bash
 docker compose build --no-cache
 docker compose up -d --build
+
+To deploy the API locally using kubectl:
+
+```bash
+  docker login
+  kubectl apply -k .k8s

@@ -4,6 +4,7 @@ metadata:
   name: mongodb-pvc
   namespace: teegarden
 spec:
+  storageClassName: mongodb-storage
   accessModes:
     - ReadWriteOnce
   resources:

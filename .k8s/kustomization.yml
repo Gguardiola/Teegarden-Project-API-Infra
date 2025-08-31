@@ -1,12 +1,15 @@
 namespace: teegarden
 resources:
+  - storageClass.yml
   - namespace.yml
   - mongodb/deployment.yml
   - mongodb/service.yml
   - mongodb/pvc.yml
+  - mongodb/pv.yml
   - minio/deployment.yml
   - minio/service.yml
   - minio/pvc.yml
+  - minio/pv.yml
   - ai-training-microservice/deployment.yml
   - ai-training-microservice/service.yml
   - nginx/deployment.yml

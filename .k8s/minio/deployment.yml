@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: minio-bucket
-          image: minio/minio:latest
+          image: quay.io/minio/minio:RELEASE.2023-11-01T01-57-10Z-cpuv1
           args:
             - server
             - /data
