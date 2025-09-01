@@ -18,12 +18,12 @@ spec:
           image: gguardiola/ai-training-microservice:latest
           env:
             - name: env
-              value: tst
+              value: ${ENV}
             - name: MINIO_ACCESS_KEY
-              value: minioadmin
+              value: ${MINIO_ACCESS_KEY}
             - name: MINIO_SECRET_KEY
-              value: minioadmin
+              value: ${MINIO_SECRET_KEY}
             - name: PRODUCTION_EXTERNAL_IP
-              value: 157.245.22.76
+              value: ${PRODUCTION_EXTERNAL_IP}
           ports:
             - containerPort: 2080
