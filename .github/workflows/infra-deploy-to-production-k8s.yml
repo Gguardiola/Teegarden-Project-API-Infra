@@ -31,4 +31,4 @@ jobs:
 
     - name: Apply deployment
       run: |
-        kubectl apply -f .k8s
+        kubectl --kubeconfig=$PWD/kubeconfig apply -f .k8s
