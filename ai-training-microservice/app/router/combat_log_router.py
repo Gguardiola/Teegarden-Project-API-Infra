@@ -14,8 +14,11 @@ async def post_combat_log(combat_log: CombatLogDTO, authorization: str = Header(
     user = verify_token(token)
     if not user:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
-    inserted_id = await CombatLogService.save_combat_log(combat_log)
-    return JSONResponse(
-        status_code=201,
-        content={"status": "processed", "id": str(inserted_id)}
-    )
+    try:
+        inserted_id = await CombatLogService.save_combat_log(combat_log)
+        return JSONResponse(
+            status_code=201,
+            content={"status": "processed", "id": str(inserted_id)}
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
