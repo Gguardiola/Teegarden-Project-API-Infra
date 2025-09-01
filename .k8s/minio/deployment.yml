@@ -21,9 +21,9 @@ spec:
             - /data
           env:
             - name: MINIO_ROOT_USER
-              value: minioadmin
+              value: ${MINIO_ACCESS_KEY}
             - name: MINIO_ROOT_PASSWORD
-              value: minioadmin
+              value: ${MINIO_ACCESS_KEY}
           ports:
             - containerPort: 9000
           volumeMounts:

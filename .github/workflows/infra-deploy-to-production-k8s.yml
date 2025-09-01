@@ -22,8 +22,13 @@ jobs:
         export MINIO_ACCESS_KEY=${{ secrets.MINIO_ACCESS_KEY }}
         export MINIO_SECRET_KEY=${{ secrets.MINIO_SECRET_KEY }}
         export PRODUCTION_EXTERNAL_IP=${{ secrets.PRODUCTION_EXTERNAL_IP }}
+        export API_SECRET=${{ secrets.API_SECRET }}
         envsubst < .k8s/ai-training-microservice/deployment.yml > .k8s/ai-training-microservice/deployment.resolved.yml
         mv .k8s/ai-training-microservice/deployment.resolved.yml .k8s/ai-training-microservice/deployment.yml
+
+        envsubst < .k8s/minio/deployment.yml > .k8s/minio/deployment.resolved.yml
+        mv .k8s/minio/deployment.resolved.yml .k8s/minio/deployment.yml
+
 
     - name: Checking Kubeconfig
       run: |

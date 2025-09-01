@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "39e97edf-bb58-48ca-b4cb-608a81a41508",
+		"name": "Teegarden-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33240906"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "player1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/combatlog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwbGF5ZXIxIiwiZXhwIjoxNzU2MjgwMjk2fQ.iSAX_oFB32bj134uxgV8J7Qtsa0j-FJDlmm5Hdxr0uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"enemyInitialAbilities\": [\r\n        {\r\n            \"abilityName\": \"Laser Banana\",\r\n            \"abilityDescription\": \"The player shots a laster loaded with potassium energy. Ignores the enemy shield.\",\r\n            \"damage\": 20.0,\r\n            \"cost\": 15.0,\r\n            \"isHealAbility\": false,\r\n            \"healAmount\": 0.0,\r\n            \"isShieldIgnored\": true,\r\n            \"isPoisonLike\": false\r\n        },\r\n        {\r\n            \"abilityName\": \"Heal\",\r\n            \"abilityDescription\": \"Heals the player\",\r\n            \"damage\": 0.0,\r\n            \"cost\": 30.0,\r\n            \"isHealAbility\": true,\r\n            \"healAmount\": 10.0,\r\n            \"isShieldIgnored\": false,\r\n            \"isPoisonLike\": false\r\n        },\r\n        {\r\n            \"abilityName\": \"Precise Shot\",\r\n            \"abilityDescription\": \"Precise shot that ignores the enemy shield\",\r\n            \"damage\": 10.0,\r\n            \"cost\": 20.0,\r\n            \"isHealAbility\": false,\r\n            \"healAmount\": 0.0,\r\n            \"isShieldIgnored\": true,\r\n            \"isPoisonLike\": false\r\n        }\r\n    ],\r\n    \"discoveredPlayerAbilities\": [\r\n        {\r\n            \"abilityName\": \"Banana hit\",\r\n            \"abilityDescription\": \"The players hits the enemy with a solid yellow banana.\",\r\n            \"damage\": 10.0,\r\n            \"cost\": 10.0,\r\n            \"isHealAbility\": false,\r\n            \"healAmount\": 0.0,\r\n            \"isShieldIgnored\": false,\r\n            \"isPoisonLike\": false\r\n        },\r\n        {\r\n            \"abilityName\": \"Destroyer of Worlds\",\r\n            \"abilityDescription\": \"Destroys everything, for real.\",\r\n            \"damage\": 90.0,\r\n            \"cost\": 1.0,\r\n            \"isHealAbility\": false,\r\n            \"healAmount\": 0.0,\r\n            \"isShieldIgnored\": true,\r\n            \"isPoisonLike\": false\r\n        }\r\n    ],\r\n    \"turns\": [\r\n        {\r\n            \"turnNumber\": 0,\r\n            \"actor\": \"player\",\r\n            \"abilityUsed\": \"Banana hit\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 10.0,\r\n            \"abilityEnergyCost\": 10.0,\r\n            \"actorHP\": 100.0,\r\n            \"actorEnergy\": 90.0,\r\n            \"opponentHP\": 90.0,\r\n            \"opponentEnergy\": 100.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 1,\r\n            \"actor\": \"enemy\",\r\n            \"abilityUsed\": \"Precise Shot\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 10.0,\r\n            \"abilityEnergyCost\": 20.0,\r\n            \"actorHP\": 90.0,\r\n            \"actorEnergy\": 80.0,\r\n            \"opponentHP\": 90.0,\r\n            \"opponentEnergy\": 90.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 2,\r\n            \"actor\": \"player\",\r\n            \"abilityUsed\": \"shield\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 0.0,\r\n            \"abilityEnergyCost\": 0.0,\r\n            \"actorHP\": 90.0,\r\n            \"actorEnergy\": 70.0,\r\n            \"opponentHP\": 90.0,\r\n            \"opponentEnergy\": 80.0,\r\n            \"isShieldAction\": true,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 3,\r\n            \"actor\": \"enemy\",\r\n            \"abilityUsed\": \"Precise Shot\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 10.0,\r\n            \"abilityEnergyCost\": 20.0,\r\n            \"actorHP\": 90.0,\r\n            \"actorEnergy\": 60.0,\r\n            \"opponentHP\": 80.0,\r\n            \"opponentEnergy\": 70.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 4,\r\n            \"actor\": \"player\",\r\n            \"abilityUsed\": \"skip\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 0.0,\r\n            \"abilityEnergyCost\": 0.0,\r\n            \"actorHP\": 80.0,\r\n            \"actorEnergy\": 90.0,\r\n            \"opponentHP\": 90.0,\r\n            \"opponentEnergy\": 60.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": true,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 5,\r\n            \"actor\": \"enemy\",\r\n            \"abilityUsed\": \"Heal\",\r\n            \"healAmount\": 10.0,\r\n            \"abilityDamage\": 0.0,\r\n            \"abilityEnergyCost\": 30.0,\r\n            \"actorHP\": 100.0,\r\n            \"actorEnergy\": 30.0,\r\n            \"opponentHP\": 80.0,\r\n            \"opponentEnergy\": 90.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": true,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 6,\r\n            \"actor\": \"player\",\r\n            \"abilityUsed\": \"Destroyer of Worlds\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 90.0,\r\n            \"abilityEnergyCost\": 1.0,\r\n            \"actorHP\": 80.0,\r\n            \"actorEnergy\": 89.0,\r\n            \"opponentHP\": 10.0,\r\n            \"opponentEnergy\": 30.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 7,\r\n            \"actor\": \"enemy\",\r\n            \"abilityUsed\": \"shield\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 0.0,\r\n            \"abilityEnergyCost\": 0.0,\r\n            \"actorHP\": 10.0,\r\n            \"actorEnergy\": 20.0,\r\n            \"opponentHP\": 80.0,\r\n            \"opponentEnergy\": 89.0,\r\n            \"isShieldAction\": true,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 8,\r\n            \"actor\": \"player\",\r\n            \"abilityUsed\": \"Banana hit\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 10.0,\r\n            \"abilityEnergyCost\": 10.0,\r\n            \"actorHP\": 80.0,\r\n            \"actorEnergy\": 79.0,\r\n            \"opponentHP\": 10.0,\r\n            \"opponentEnergy\": 20.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": false\r\n        },\r\n        {\r\n            \"turnNumber\": 9,\r\n            \"actor\": \"enemy\",\r\n            \"abilityUsed\": \"shield\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 0.0,\r\n            \"abilityEnergyCost\": 0.0,\r\n            \"actorHP\": 10.0,\r\n            \"actorEnergy\": 10.0,\r\n            \"opponentHP\": 80.0,\r\n            \"opponentEnergy\": 79.0,\r\n            \"isShieldAction\": true,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        },\r\n        {\r\n            \"turnNumber\": 10,\r\n            \"actor\": \"player\",\r\n            \"abilityUsed\": \"Destroyer of Worlds\",\r\n            \"healAmount\": 0.0,\r\n            \"abilityDamage\": 90.0,\r\n            \"abilityEnergyCost\": 1.0,\r\n            \"actorHP\": 80.0,\r\n            \"actorEnergy\": 78.0,\r\n            \"opponentHP\": 0.0,\r\n            \"opponentEnergy\": 10.0,\r\n            \"isShieldAction\": false,\r\n            \"isSkippedAction\": false,\r\n            \"isHealingAbility\": false,\r\n            \"wasEffective\": true\r\n        }\r\n    ],\r\n    \"winner\": \"player\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/combatlog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"combatlog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/model?version={v}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwbGF5ZXIxIiwiZXhwIjoxNzU2MjgwMjk2fQ.iSAX_oFB32bj134uxgV8J7Qtsa0j-FJDlmm5Hdxr0uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/model?version=latest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"model"
+					],
+					"query": [
+						{
+							"key": "version",
+							"value": "latest"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "bearer",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwbGF5ZXIxIiwiZXhwIjoxNzUxODI4MTA2fQ.7TB9Xs3j71IbbuaResvlv06ZR8VuDVh6eOekA5bt--U"
+		}
+	]
+}

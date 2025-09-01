@@ -3,6 +3,9 @@ FROM python:3.9
 WORKDIR /code
 
 ENV API_SECRET="teegarden-tfg-2025"
+ENV env="tst"
+ENV MINIO_SECRET_KEY="minioadmin"
+ENV MINIO_ACCESS_KEY="minioadmin"
 
 RUN apt-get update && apt-get install -y git nano cron
 

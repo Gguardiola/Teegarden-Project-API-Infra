@@ -25,5 +25,7 @@ spec:
               value: ${MINIO_SECRET_KEY}
             - name: PRODUCTION_EXTERNAL_IP
               value: ${PRODUCTION_EXTERNAL_IP}
+            - name: API_SECRET
+              value: ${API_SECRET}
           ports:
             - containerPort: 2080
