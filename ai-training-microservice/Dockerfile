@@ -3,7 +3,6 @@ FROM python:3.9
 WORKDIR /code
 
 ENV API_SECRET="teegarden-tfg-2025"
-ENV VERSION="LOCAL"
 
 RUN apt-get update && apt-get install -y git nano cron
 

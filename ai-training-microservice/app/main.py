@@ -3,7 +3,7 @@ from router import combat_log_router
 from router import model_router
 from router import auth_router
 import os
-print("[Main] Starting AI Training Microservice - version", os.environ.get("VERSION", "1.0.0"))
+print("[Main] Starting AI Training Microservice - ", os.getenv("env","local"))
 
 app = FastAPI()
 app.include_router(model_router.router)

@@ -19,5 +19,11 @@ spec:
           env:
             - name: env
               value: tst
+            - name: MINIO_ACCESS_KEY
+              value: minioadmin
+            - name: MINIO_SECRET_KEY
+              value: minioadmin
+            - name: PRODUCTION_EXTERNAL_IP
+              value: 157.245.22.76
           ports:
             - containerPort: 2080

@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 import service.model_service as ModelService
 from utils.auth import verify_token
 from utils.minio_client import minio_client, BUCKET_NAME
-
+import os
 
 router = APIRouter()
 print("[ModelRouter] Initializing model router")
@@ -33,6 +33,8 @@ async def get_model(version: str, authorization: str = Header(...)):
 
         url = minio_client.presigned_get_object(BUCKET_NAME, model_key)
         url = url.replace("http://minio-bucket:9000", "http://localhost")
+        if os.getenv("env") == "tst":
+            url = url.replace("http://minio-bucket:9000", "http://" + os.getenv("PRODUCTION_EXTERNAL_IP"))
         return JSONResponse(content={"download_url": url})
 
     except FileNotFoundError as e:
