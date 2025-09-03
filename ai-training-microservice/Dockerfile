@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 RUN chmod +x /code/app/intellicombat_rl_trainer/trainer.sh
 
-RUN echo "*/2 * * * * /bin/bash /code/app/intellicombat_rl_trainer/trainer.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/trainer-cron \
+RUN echo "0 3 * * * /bin/bash /code/app/intellicombat_rl_trainer/trainer.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/trainer-cron \
  && chmod 0644 /etc/cron.d/trainer-cron \
  && crontab /etc/cron.d/trainer-cron
 
